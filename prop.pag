@@ -1,0 +1,481 @@
+VERSION 5.00
+Begin VB.PropertyPage Prop 
+   Caption         =   "Properties"
+   ClientHeight    =   3495
+   ClientLeft      =   0
+   ClientTop       =   0
+   ClientWidth     =   5925
+   ForeColor       =   &H8000000C&
+   HasDC           =   0   'False
+   KeyPreview      =   -1  'True
+   PaletteMode     =   0  'Rasterbild
+   ScaleHeight     =   3495
+   ScaleWidth      =   5925
+   Begin VB.PictureBox Picture1 
+      Appearance      =   0  '2D
+      BorderStyle     =   0  'Kein
+      ForeColor       =   &H80000008&
+      Height          =   120
+      Left            =   4005
+      ScaleHeight     =   120
+      ScaleWidth      =   270
+      TabIndex        =   20
+      Top             =   2040
+      Width           =   270
+   End
+   Begin VB.Frame fra 
+      Caption         =   "&Spacing"
+      Height          =   1350
+      Index           =   0
+      Left            =   900
+      TabIndex        =   0
+      Top             =   375
+      Width           =   1215
+      Begin VB.CommandButton btnResExtra 
+         Caption         =   "><"
+         Height          =   225
+         Left            =   795
+         TabIndex        =   3
+         ToolTipText     =   "Reset box size"
+         Top             =   990
+         Width           =   300
+      End
+      Begin VB.PictureBox pic 
+         BackColor       =   &H00C0C0C0&
+         BorderStyle     =   0  'Kein
+         HasDC           =   0   'False
+         Height          =   225
+         Index           =   0
+         Left            =   300
+         ScaleHeight     =   225
+         ScaleWidth      =   225
+         TabIndex        =   15
+         TabStop         =   0   'False
+         ToolTipText     =   "Adjust the box size"
+         Top             =   495
+         Width           =   225
+      End
+      Begin VB.HScrollBar scrExtraX 
+         Height          =   225
+         Left            =   105
+         Max             =   30
+         Min             =   -30
+         TabIndex        =   1
+         Top             =   495
+         Width           =   600
+      End
+      Begin VB.VScrollBar scrExtraY 
+         Height          =   600
+         Left            =   300
+         Max             =   30
+         Min             =   -30
+         TabIndex        =   2
+         Top             =   300
+         Width           =   225
+      End
+      Begin VB.Label lblExtraY 
+         Alignment       =   2  'Zentriert
+         Appearance      =   0  '2D
+         BackColor       =   &H00FFFFFF&
+         BorderStyle     =   1  'Fest Einfach
+         ForeColor       =   &H80000008&
+         Height          =   225
+         Left            =   270
+         TabIndex        =   17
+         Top             =   990
+         Width           =   285
+      End
+      Begin VB.Label lblExtraX 
+         Alignment       =   2  'Zentriert
+         Appearance      =   0  '2D
+         BackColor       =   &H00FFFFFF&
+         BorderStyle     =   1  'Fest Einfach
+         ForeColor       =   &H80000008&
+         Height          =   225
+         Left            =   795
+         TabIndex        =   16
+         Top             =   495
+         Width           =   285
+      End
+   End
+   Begin VB.Frame fra 
+      Caption         =   "&Position"
+      Height          =   1350
+      Index           =   1
+      Left            =   900
+      TabIndex        =   4
+      Top             =   1815
+      Width           =   1215
+      Begin VB.CommandButton btnResPosn 
+         Caption         =   "><"
+         Height          =   225
+         Left            =   795
+         TabIndex        =   7
+         ToolTipText     =   "Reset digit position"
+         Top             =   990
+         Width           =   300
+      End
+      Begin VB.PictureBox pic 
+         BackColor       =   &H00C0C0C0&
+         BorderStyle     =   0  'Kein
+         HasDC           =   0   'False
+         Height          =   225
+         Index           =   1
+         Left            =   315
+         ScaleHeight     =   225
+         ScaleWidth      =   225
+         TabIndex        =   12
+         TabStop         =   0   'False
+         ToolTipText     =   "Position the digit within the box"
+         Top             =   495
+         Width           =   225
+      End
+      Begin VB.HScrollBar scrPosnX 
+         Height          =   225
+         Left            =   120
+         Max             =   16
+         Min             =   -16
+         TabIndex        =   5
+         Top             =   495
+         Width           =   600
+      End
+      Begin VB.VScrollBar scrPosnY 
+         Height          =   600
+         Left            =   315
+         Max             =   20
+         Min             =   -20
+         TabIndex        =   6
+         Top             =   300
+         Width           =   225
+      End
+      Begin VB.Label lblPosnX 
+         Alignment       =   2  'Zentriert
+         Appearance      =   0  '2D
+         BackColor       =   &H00FFFFFF&
+         BorderStyle     =   1  'Fest Einfach
+         ForeColor       =   &H80000008&
+         Height          =   225
+         Left            =   810
+         TabIndex        =   14
+         Top             =   495
+         Width           =   285
+      End
+      Begin VB.Label lblPosnY 
+         Alignment       =   2  'Zentriert
+         Appearance      =   0  '2D
+         BackColor       =   &H00FFFFFF&
+         BorderStyle     =   1  'Fest Einfach
+         ForeColor       =   &H80000008&
+         Height          =   225
+         Left            =   285
+         TabIndex        =   13
+         Top             =   990
+         Width           =   285
+      End
+   End
+   Begin VB.TextBox txtValue 
+      Height          =   285
+      Left            =   3165
+      MaxLength       =   14
+      TabIndex        =   9
+      ToolTipText     =   "Enter the start value for the Counter"
+      Top             =   960
+      Width           =   2040
+   End
+   Begin VB.VScrollBar scrDigits 
+      Height          =   630
+      Left            =   4005
+      Max             =   1
+      Min             =   9
+      TabIndex        =   11
+      Top             =   1785
+      Value           =   1
+      Width           =   270
+   End
+   Begin VB.Label lblDigits 
+      Alignment       =   2  'Zentriert
+      Appearance      =   0  '2D
+      BackColor       =   &H00FFFFFF&
+      BorderStyle     =   1  'Fest Einfach
+      Caption         =   "1"
+      ForeColor       =   &H00000000&
+      Height          =   225
+      Left            =   3990
+      TabIndex        =   19
+      Top             =   2490
+      Width           =   315
+   End
+   Begin VB.Label lblName 
+      AutoSize        =   -1  'True
+      Height          =   195
+      Left            =   60
+      TabIndex        =   18
+      Top             =   45
+      Width           =   45
+   End
+   Begin VB.Label lbl 
+      Caption         =   "&Value"
+      Height          =   195
+      Index           =   0
+      Left            =   3165
+      TabIndex        =   8
+      Top             =   660
+      Width           =   450
+   End
+   Begin VB.Label lbl 
+      Caption         =   "&Digits"
+      Height          =   195
+      Index           =   1
+      Left            =   3195
+      TabIndex        =   10
+      Top             =   1995
+      Width           =   390
+   End
+End
+Attribute VB_Name = "Prop"
+Attribute VB_GlobalNameSpace = False
+Attribute VB_Creatable = True
+Attribute VB_PredeclaredId = False
+Attribute VB_Exposed = True
+Option Explicit
+Private Loading           As Boolean
+Private Control           As Variant
+Private PreviousFocus     As Long
+Private PreviousValue     As Currency
+Private Declare Sub PutFocus Lib "user32" Alias "SetFocus" (ByVal hWnd As Long)
+
+Private Sub btnResExtra_Click()
+
+    scrExtraX = 6
+    scrExtraY = 6
+    PutFocus PreviousFocus
+
+End Sub
+
+Private Sub btnResPosn_Click()
+
+    scrPosnX = 0
+    scrPosnY = 0
+    PutFocus PreviousFocus
+
+End Sub
+
+Private Sub PropertyPage_SelectionChanged()
+
+  Dim i As Long
+
+    Loading = True
+    For Each Control In SelectedControls
+        i = i + 1
+        With Control
+            If i = 1 Then
+                scrExtraX = .CharacterExtraX
+                scrExtraY = .CharacterExtraY
+                scrPosnX = .PosnX
+                scrPosnY = .PosnY
+                lblExtraX = scrExtraX
+                lblExtraY = scrExtraY
+                lblPosnX = scrPosnX
+                lblPosnY = scrPosnY
+                scrDigits = .Digits
+                txtValue = .Value
+                txtValue.SelStart = 10
+                lblName = .ControlName
+              Else 'NOT I...
+                lblName = "<" & Format$(i) & " Controls>"
+            End If
+        End With 'CONTROL
+    Next Control
+    lblName = "for " & lblName
+    Loading = False
+
+End Sub
+
+Private Sub scrDigits_Change()
+
+    scrDigits_Scroll
+
+End Sub
+
+Private Sub scrDigits_GotFocus()
+
+    PreviousFocus = scrDigits.hWnd
+    lblDigits.BackColor = vbYellow
+
+End Sub
+
+Private Sub scrDigits_LostFocus()
+
+    lblDigits.BackColor = vbWhite
+
+End Sub
+
+Private Sub scrDigits_Scroll()
+
+    lblDigits = scrDigits
+    If Loading = False Then
+        For Each Control In SelectedControls
+            Control.Digits = scrDigits
+        Next Control
+    End If
+
+End Sub
+
+Private Sub scrExtraX_Change()
+
+    scrExtraX_Scroll
+
+End Sub
+
+Private Sub scrExtraX_GotFocus()
+
+    PreviousFocus = scrExtraX.hWnd
+    lblExtraX.BackColor = vbYellow
+
+End Sub
+
+Private Sub scrExtraX_LostFocus()
+
+    lblExtraX.BackColor = vbWhite
+
+End Sub
+
+Private Sub scrExtraX_Scroll()
+
+    If Loading = False Then
+        On Error Resume Next
+          For Each Control In SelectedControls
+              Control.CharacterExtraX = scrExtraX
+          Next Control
+        On Error GoTo 0
+    End If
+
+End Sub
+
+Private Sub scrExtraY_Change()
+
+    scrExtraY_Scroll
+
+End Sub
+
+Private Sub scrExtraY_GotFocus()
+
+    PreviousFocus = scrExtraY.hWnd
+    lblExtraY.BackColor = vbYellow
+
+End Sub
+
+Private Sub scrExtraY_LostFocus()
+
+    lblExtraY.BackColor = vbWhite
+
+End Sub
+
+Private Sub scrExtraY_Scroll()
+
+    If Loading = False Then
+        On Error Resume Next
+          For Each Control In SelectedControls
+              Control.CharacterExtraY = scrExtraY
+          Next Control
+        On Error GoTo 0
+    End If
+
+End Sub
+
+Private Sub scrPosnX_Change()
+
+    scrPosnX_Scroll
+
+End Sub
+
+Private Sub scrPosnX_GotFocus()
+
+    PreviousFocus = scrPosnX.hWnd
+    lblPosnX.BackColor = vbYellow
+
+End Sub
+
+Private Sub scrPosnX_LostFocus()
+
+    lblPosnX.BackColor = vbWhite
+
+End Sub
+
+Private Sub scrPosnX_Scroll()
+
+    If Loading = False Then
+        On Error Resume Next
+          For Each Control In SelectedControls
+              Control.PosnX = scrPosnX
+          Next Control
+        On Error GoTo 0
+    End If
+
+End Sub
+
+Private Sub scrPosnY_Change()
+
+    scrPosnY_Scroll
+
+End Sub
+
+Private Sub scrPosnY_GotFocus()
+
+    PreviousFocus = scrPosnY.hWnd
+    lblPosnY.BackColor = vbYellow
+
+End Sub
+
+Private Sub scrPosnY_LostFocus()
+
+    lblPosnY.BackColor = vbWhite
+
+End Sub
+
+Private Sub scrPosnY_Scroll()
+
+    If Loading = False Then
+        On Error Resume Next
+          For Each Control In SelectedControls
+              Control.PosnY = scrPosnY
+          Next Control
+        On Error GoTo 0
+    End If
+
+End Sub
+
+Private Sub txtValue_Change()
+
+  Dim Value As Currency
+
+    If Loading = False Then
+        On Error Resume Next
+          Value = CCur(txtValue)
+          If Err Then
+              Value = Val(txtValue)
+          End If
+        On Error GoTo 0
+        If Abs(Value) >= 10 ^ (scrDigits) Then
+            Value = Value / 10
+            txtValue = Value
+        End If
+        If Value <> PreviousValue Then
+            For Each Control In SelectedControls
+                Control.Value = Value
+            Next Control
+            PreviousValue = Value
+        End If
+    End If
+
+End Sub
+
+Private Sub txtValue_GotFocus()
+
+    txtValue.SelStart = 0
+    txtValue.SelLength = txtValue.MaxLength
+    PreviousFocus = txtValue.hWnd
+
+End Sub
+
+':) Ulli's VB Code Formatter V2.11.3 (11.04.2002 14:10:40) 6 + 236 = 242 Lines

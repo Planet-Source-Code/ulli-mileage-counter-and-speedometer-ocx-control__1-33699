@@ -1,0 +1,1 @@
+A new type of progress indicator (mileage counter and speedometer), similar to the one you have in your car. Check it out, download is only 17 kB.
